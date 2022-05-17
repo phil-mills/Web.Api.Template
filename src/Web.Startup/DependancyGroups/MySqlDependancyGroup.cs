@@ -19,7 +19,7 @@ namespace Web.Startup.DependancyGroups
             services.AddMvc();
             services.AddDbContext<Context>(
                 options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection"),
-                    options => options.MigrationsAssembly("App.Data"))
+                    options => options.MigrationsAssembly("Web.Data"))
             );
 
             // register database repositories here.

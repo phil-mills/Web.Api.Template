@@ -29,7 +29,7 @@ namespace Web.Startup
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "App.Startup", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Web.Startup", Version = "v1" });
             });
 
             foreach (var group in this.GetDependancyGroups(services))
@@ -47,7 +47,7 @@ namespace Web.Startup
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "App.Startup v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web.Startup v1"));
             }
 
             app.UseHttpsRedirection();
